@@ -5,9 +5,10 @@ import icons from '../../img/icons.svg';
 
 class ResultsView extends View {
   constructor() {
-    _parentElement = document.querySelector('.results');
-    _errorMessage = 'No Recipe Found For Your Query! Please Try Again ;)';
-    _message = '';
+    super();
+    this._parentElement = document.querySelector('.results');
+    this._errorMessage = 'No Recipe Found For Your Query! Please Try Again ;)';
+    this._message = '';
   }
   _generateMarkup() {
     // console.log(this._data);

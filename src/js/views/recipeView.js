@@ -9,9 +9,11 @@ import { Fraction } from 'fraction.js';
 
 class RecipeView extends View {
   constructor() {
-    _parentElement = document.querySelector('.recipe');
-    _errorMessage = 'We could not find that recipe. Please try another one! ';
-    _message = '';
+    super();
+    this._parentElement = document.querySelector('.recipe');
+    this._errorMessage =
+      'We could not find that recipe. Please try another one! ';
+    this._message = '';
   }
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
