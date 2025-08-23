@@ -52,20 +52,3 @@ npm run start
 # 4. Build for production
 npm run build
 ```
-
-forkify/
-├── src/
-│ ├── index.html
-│ ├── scss/
-│ │ └── styles.scss
-│ ├── js/
-│ │ ├── model.js ...
-│ │ ├── views/ ...
-│ │ │ ├── searchView.js
-│ │ │ ├── recipeView.js
-│ │ │ └── bookmarksView.js
-│ │ └── controller.js
-├── dist/ # Compiled production build
-├── package.json
-├── .gitignore
-└── README.md
