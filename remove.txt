@@ -3,3 +3,26 @@
 
     "test": "echo \"Error: no test specified\" && exit 1"
 
+
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipe application",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist --public-url ./"
+  },
+  "author": "Jonas Schedtmann",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.15.2",
+    "sass": "^1.89.1"
+  },
+  "dependencies": {
+    "core-js": "^3.42.0",
+    "fraction.js": "^5.2.2",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.14.1"
+  }
+}
