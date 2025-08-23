@@ -1,9 +1,11 @@
 import View from './View.js';
-import icons from 'url:../../img/icons.svg'; // Parcel 2
+// ✅ Correct (Parcel v1)
+import icons from '../../img/icons.svg';
 
 class PreviewView extends View {
-  _parentElement = '';
-
+  constructor() {
+    _parentElement = '';
+  }
   _generateMarkup() {
     const id = window.location.hash.slice(1);
 

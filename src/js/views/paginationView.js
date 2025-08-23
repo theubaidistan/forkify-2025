@@ -1,9 +1,11 @@
 import View from './View.js';
-import icons from 'url:../../img/icons.svg'; // Parcel 2
+// ✅ Correct (Parcel v1)
+import icons from '../../img/icons.svg';
 
 class PaginationView extends View {
-  _parentElement = document.querySelector('.pagination');
-
+  constructor() {
+    _parentElement = document.querySelector('.pagination');
+  }
   // Event Delegation
   addHandlerClick(hanler) {
     this._parentElement.addEventListener('click', function (e) {

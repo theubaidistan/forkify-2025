@@ -1,16 +1,18 @@
 import View from './View.js';
-import icons from 'url:../../img/icons.svg'; // Parcel 2
+// import icons from 'url:../../img/icons.svg'; // Parcel 2
+// ✅ Correct (Parcel v1)
+import icons from '../../img/icons.svg';
 
 class AddRecipeView extends View {
-  _parentElement = document.querySelector('.upload');
-  _message = 'Recipe was Successfully Uploaded :)';
-
-  _window = document.querySelector('.add-recipe-window');
-  _overlay = document.querySelector('.overlay');
-  _btnOpen = document.querySelector('.nav__btn--add-recipe');
-  _btnClose = document.querySelector('.btn--close-modal');
-
   constructor() {
+    _parentElement = document.querySelector('.upload');
+    _message = 'Recipe was Successfully Uploaded :)';
+
+    _window = document.querySelector('.add-recipe-window');
+    _overlay = document.querySelector('.overlay');
+    _btnOpen = document.querySelector('.nav__btn--add-recipe');
+    _btnClose = document.querySelector('.btn--close-modal');
+
     super();
     this._addHandlerShowWindow();
     this._addHandlerHideWindow();

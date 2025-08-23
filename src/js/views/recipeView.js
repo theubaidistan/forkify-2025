@@ -1,16 +1,18 @@
 import View from './View.js';
 // import icons from '../img/icons.svg';  // Parcel 1
-import icons from 'url:../../img/icons.svg'; // Parcel 2
+// ✅ Correct (Parcel v1)
+import icons from '../../img/icons.svg';
 import { Fraction } from 'fraction.js';
 // import { Fraction } from 'fractional';
 
 // console.log(Fraction);
 
 class RecipeView extends View {
-  _parentElement = document.querySelector('.recipe');
-  _errorMessage = 'We could not find that recipe. Please try another one! ';
-  _message = '';
-
+  constructor() {
+    _parentElement = document.querySelector('.recipe');
+    _errorMessage = 'We could not find that recipe. Please try another one! ';
+    _message = '';
+  }
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }

@@ -5,21 +5,24 @@
   "scripts": {
     "dev": "parcel index.html",
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist --public-url ./",
+    "build": "parcel build index.html --public-url ./",
     "deploy": "gh-pages -d dist"
   },
   "author": "Jonas Schmedtmann",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.15.4",
-    "parcel": "^2.15.0",
-    "sass": "^1.89.1",
-    "gh-pages": "^6.1.1"
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "gh-pages": "^6.1.1",
+    "htmlnano": "^0.2.7",
+    "parcel-bundler": "1.12.5",
+    "sass": "^1.89.1"
   },
   "dependencies": {
     "core-js": "^3.42.0",
     "fraction.js": "^5.2.2",
     "fractional": "^1.0.0",
+    "img": "^3.0.3",
     "regenerator-runtime": "^0.14.1"
   },
   "browserslist": [
