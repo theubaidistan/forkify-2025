@@ -21,7 +21,7 @@ class PreviewView extends View {
                   this._data.key ? '' : 'hidden'
                 }">
                 <svg>
-                <use href="${icons}#icon-user"></use>
+                <use xlink:href="${icons}#icon-user"></use>
                 </svg>
                 </div>
               </div>

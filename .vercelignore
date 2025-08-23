@@ -1,0 +1,23 @@
+# Ignore dependencies (they will be installed on Vercel)
+node_modules
+.pnp
+.pnp.js
+
+# Ignore logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Ignore Parcel caches (no need in production)
+.cache
+.parcel-cache
+
+# Ignore local build output (Vercel builds fresh)
+dist
+
+# Ignore editor/IDE configs
+.vscode
+.DS_Store
+.idea
