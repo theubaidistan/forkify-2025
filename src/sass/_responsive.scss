@@ -1,0 +1,402 @@
+// =============================
+// RESPONSIVE DESIGN
+// =============================
+
+// Font scaling
+@media only screen and (max-width: $bp-small) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media only screen and (max-width: $bp-smallest) {
+  html {
+    font-size: 40%;
+  }
+}
+
+// Container grid
+.container {
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'head'
+      'list'
+      'recipe';
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    min-height: auto;
+    margin: 2vw;
+  }
+}
+
+// Header & Search
+/*
+.header {
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+    padding: 1rem 2rem;
+
+    &__logo {
+      margin: 1rem 0;
+      height: 3.6rem;
+    }
+  }
+}
+*/
+
+/*
+.header {
+  grid-area: head;
+  background-color: $color-grey-light-1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    margin-left: 4rem;
+    height: 4.6rem;
+  }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column; // stack logo + nav vertically
+    align-items: center; // center horizontally
+    padding: 1.5rem 2rem;
+
+    &__logo {
+      margin: 0 0 1rem 0; // logo centered
+    }
+
+    .nav__list {
+      flex-direction: row; // keep nav horizontal
+      justify-content: center; // center nav items
+      gap: 16rem; // spacing between buttons
+      width: 100%;
+    }
+
+    .nav__item .nav__btn {
+      justify-content: center; // center icon + text inside button
+    }
+  }
+}
+*/
+
+
+.header {
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column; // stack logo + search + nav vertically
+    align-items: center;
+    padding: 1.5rem 2rem;
+
+    &__logo {
+      margin: 0 0 1rem 0; // logo centered
+    }
+
+    .search {
+      width: 90%;
+      margin: 0 auto 1.5rem auto; // add bottom margin to separate from nav
+    }
+
+    .nav__list {
+      flex-direction: row;
+      justify-content: center;
+      gap: 16rem; // spacing between nav buttons
+      width: 100%;
+      margin-top: 0rem; // vertical gap between search bar and nav
+    }
+
+    .nav__item .nav__btn {
+      justify-content: center;
+    }
+  }
+}
+
+
+
+.search {
+  background-color: #fff;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  transition: all 0.3s;
+
+  &__field {
+    border: none;
+    background: none;
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.7rem;
+    flex: 1; // let it take available space
+    min-width: 0; // prevents overflow
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $color-grey-light-3;
+    }
+  }
+
+  &__btn {
+    font-weight: 600;
+    font-family: inherit;
+    padding: 1rem 2rem; // smaller button
+    font-size: 1.4rem;
+  }
+
+  // Responsive tweaks
+  @media only screen and (max-width: $bp-small) {
+    width: 90%; // take most of the screen width
+    margin: 0 auto; // center it
+    padding-left: 1.5rem;
+
+    &__field {
+      font-size: 1.5rem;
+    }
+
+    &__btn {
+      padding: 0.8rem 1.6rem;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+// Buttons
+.btn {
+  @media only screen and (max-width: $bp-small) {
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+// Recipe Section
+/*
+.recipe {
+  @media only screen and (max-width: $bp-small) {
+    &__details {
+      flex-direction: column;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    &__ingredients {
+      padding: 3rem 2rem;
+      grid-template-columns: 1fr;
+    }
+
+    &__directions {
+      padding: 3rem 2rem;
+    }
+  }
+}
+*/
+
+/*
+.recipe {
+  @media only screen and (max-width: $bp-small) {
+    &__details {
+      display: flex;
+      flex-direction: column; // stack sections vertically
+      align-items: center; // center horizontally
+      gap: 1rem; // spacing between info blocks
+      padding: 5rem 2rem;
+      text-align: center;
+      // margin-right: 0rem;
+
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: row; // keep minutes + servings icons horizontal
+      align-items: center; // vertical center
+      justify-content: center; // horizontal center
+      gap: 1.5rem; // space between info blocks
+
+      .recipe__info-data,
+      .recipe__info-text {
+        font-size: 1.6rem; // adjust text size for mobile
+        margin-left: -1rem;
+      }
+
+      .recipe__info-buttons {
+        display: flex;
+        gap: 0.5rem;
+
+        button {
+          padding: 0.5rem; // smaller buttons
+        }
+      }
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    &__ingredients {
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center; // center each ingredient horizontally
+    }
+
+    &__directions {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    // Hide gap between user-generated icon and bookmark button
+    &__user-generated {
+      display: inline-flex;
+      margin-right: 0; // remove default spacing
+    }
+
+    .btn--round {
+      margin-left: 0; // remove extra spacing
+    }
+  }
+}
+
+*/
+
+
+.recipe {
+  @media only screen and (max-width: $bp-small) {
+    &__details {
+      display: flex;
+      flex-direction: column; // stack sections vertically
+      align-items: center;
+      gap: 2rem; // space between info blocks
+      padding: 5.6rem 2rem;
+      text-align: center;
+    }
+
+    // Info blocks (minutes + servings)
+    &__info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding-left: 2rem;
+      margin-top: 0rem;
+
+
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1rem;
+
+
+      }
+
+      .recipe__info-data,
+      .recipe__info-text {
+        font-size: 1.6rem;
+        margin: 0;
+      }
+
+      .recipe__info-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 0.3rem;
+
+
+        button {
+          padding: 0.5rem;
+        }
+      }
+    }
+
+    // Hide gap between user-generated icon and bookmark button
+    &__user-generated {
+      display: inline-flex;
+      margin-right: 0; // remove default spacing
+    }
+
+    .btn--round {
+      margin-left: 0; // remove extra spacing
+      margin-top: -3rem;
+      margin-bottom: -1rem;
+    }
+  }
+}
+
+
+
+// Search Results & Pagination
+
+.results {
+  @media only screen and (max-width: $bp-small) {
+    margin-bottom: 1rem;
+  }
+}
+
+
+.pagination {
+  @media only screen and (max-width: $bp-small) {
+    padding: 1rem;
+    text-align: center;
+
+    &__btn {
+      float: none;
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+
+.search-results {
+  @media only screen and (max-width: $bp-small) {
+    margin-top: 3.5rem; // gap between nav and search results
+  }
+}
+
+
+
+// Upload Modal
+/*
+.add-recipe-window {
+  @media only screen and (max-width: $bp-small) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+}
+  */
+
+.add-recipe-window {
+  @media only screen and (max-width: $bp-small) {
+    width: 90%; // shrink width a bit
+    height: auto; // fit content instead of full height
+    max-height: 90vh; // prevent it from overflowing screen
+    border-radius: 1.2rem;
+    padding: 2rem;
+    overflow-y: auto; // only scroll if content is long
+
+    // Reduce font sizes for labels, inputs, selects
+    label,
+    input,
+    select,
+    textarea {
+      font-size: 1.3rem; // smaller text
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 0.8rem 1.2rem; // smaller fields
+    }
+  }
+}
