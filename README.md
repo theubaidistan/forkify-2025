@@ -1,20 +1,20 @@
 <div align="center">
 
-![Forkify Banner](https://img-c.udemycdn.com/course/480x270/851712_fc61_6.jpg)
+<img src="https://img-c.udemycdn.com/course/480x270/851712_fc61_6.jpg" alt="Forkify Banner" width="600" style="border-radius: 12px;" />
 
 # 🍴 Forkify 2025
 
-### Search over 1,000,000 recipes — bookmark favorites, adjust servings & upload your own.
+### Search, view, and bookmark over **1,000,000 recipes** — powered by the Forkify API.
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
-[![Parcel](https://img.shields.io/badge/Parcel-B07B4B?style=for-the-badge&logo=parcel&logoColor=white)](https://parceljs.org/)
-[![Forkify API](https://img.shields.io/badge/Forkify%20API-FF6B6B?style=for-the-badge&logo=fastapi&logoColor=white)](https://forkify-api.herokuapp.com/v2)
-[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://forkify-2025.vercel.app/)
+[![Parcel](https://img.shields.io/badge/Parcel-B07219?style=for-the-badge&logo=parcel&logoColor=white)](https://parceljs.org/)
+[![Forkify API](https://img.shields.io/badge/Forkify_API-FF6B35?style=for-the-badge&logo=api&logoColor=white)](https://forkify-api.herokuapp.com/v2)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-**[🚀 Live Demo](https://forkify-2025.vercel.app/)**
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-forkify--2025.vercel.app-brightgreen?style=for-the-badge)](https://forkify-2025.vercel.app/)
 
 </div>
 
@@ -22,53 +22,58 @@
 
 ## 📖 About
 
-**Forkify** is a vanilla JavaScript recipe application built with a clean MVC architecture. It connects to the [Forkify API](https://forkify-api.herokuapp.com/v2) to let users search through over **1,000,000 recipes**, adjust servings dynamically, bookmark favourites, and even upload their own custom recipes — all without a single framework.
+**Forkify 2025** is a modern recipe search and management web application built with vanilla JavaScript, following the **MVC (Model-View-Controller)** architectural pattern. It connects to the Forkify API to give users access to over **1,000,000 recipes**, with features to bookmark favorites and even upload custom recipes.
+
+This project was built as part of [Jonas Schmedtmann's](https://twitter.com/jonasschmedtman) JavaScript course on Udemy.
 
 ---
 
 ## ✨ Features
 
-- 🔍 **Search** — Query over 1,000,000 recipes from the Forkify API
-- 📄 **Pagination** — Browse results 10 at a time
-- 🍽️ **Serving Adjuster** — Ingredient quantities scale automatically with servings
-- 🔖 **Bookmarks** — Save favourite recipes, persisted via `localStorage`
-- ➕ **Upload Recipes** — Add your own recipes directly through the UI
-- 📱 **Responsive Design** — Clean layout that works across screen sizes
+- 🔍 **Search** over 1,000,000 recipes via the Forkify API
+- 📄 **Pagination** — browse results page by page
+- 🧾 **Ingredient scaling** — adjust servings and ingredient quantities dynamically
+- 🔖 **Bookmarks** — save your favourite recipes (persisted via `localStorage`)
+- ➕ **Upload custom recipes** — add your own recipes through a modal form
+- 📱 **Responsive UI** — clean and intuitive layout across devices
+
+---
+
+## 🏗️ Architecture & Flowcharts
+
+This application follows a clean **MVC pattern** with a Publisher-Subscriber model for event handling.
+
+### Flowchart — Part 1
+> Search & Render Results
+
+![Flowchart Part 1](https://github.com/theubaidistan/forkify-2025/blob/main/forkify-flowchart-part-1.png?raw=true)
+
+---
+
+### Flowchart — Part 2
+> Recipe Loading & Bookmarking
+
+![Flowchart Part 2](https://github.com/theubaidistan/forkify-2025/blob/main/forkify-flowchart-part-2.png?raw=true)
+
+---
+
+### Flowchart — Part 3
+> Upload Recipe & Full Application Flow
+
+![Flowchart Part 3](https://github.com/theubaidistan/forkify-2025/blob/main/forkify-flowchart-part-3.png?raw=true)
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Markup | HTML5 |
-| Styling | CSS3 · Sass (SCSS) |
-| Logic | JavaScript (ES2022, Modules) |
-| Bundler | Parcel v2 |
-| Data | Forkify REST API v2 |
-| Hosting | Vercel |
-
----
-
-## 🏗️ Architecture
-
-The project follows the **MVC (Model-View-Controller)** pattern:
-
-```
-src/
-├── js/
-│   ├── model.js          # State & business logic
-│   ├── controller.js     # Connects model ↔ views
-│   └── views/
-│       ├── recipeView.js
-│       ├── searchView.js
-│       ├── resultsView.js
-│       ├── bookmarksView.js
-│       ├── paginationView.js
-│       └── addRecipeView.js
-└── sass/
-    └── main.scss
-```
+| Technology | Purpose |
+|---|---|
+| **HTML5** | Markup structure |
+| **CSS3 / Sass** | Styling with variables, mixins, and nesting |
+| **JavaScript (ES6+)** | Application logic, async/await, modules |
+| **Parcel** | Module bundler and dev server |
+| **Forkify API v2** | Recipe data source |
+| **Vercel** | Deployment and hosting |
 
 ---
 
@@ -76,24 +81,30 @@ src/
 
 ### Prerequisites
 
-- Node.js ≥ 16
-- npm or yarn
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- npm
 
 ### Installation
 
 ```bash
-# 1. Clone the repository
+# Clone the repository
 git clone https://github.com/theubaidistan/forkify-2025.git
+
+# Navigate into the project directory
 cd forkify-2025
 
-# 2. Install dependencies
+# Install dependencies
 npm install
+```
 
-# 3. Start the dev server
+### Development
+
+```bash
+# Start the development server
 npm start
 ```
 
-Open [http://localhost:1234](http://localhost:1234) in your browser.
+Parcel will start a local dev server at `http://localhost:1234`.
 
 ### Build for Production
 
@@ -101,39 +112,45 @@ Open [http://localhost:1234](http://localhost:1234) in your browser.
 npm run build
 ```
 
-Output goes to the `dist/` folder, ready to deploy.
+The optimized output will be in the `dist/` folder.
 
 ---
 
 ## 🌐 Deployment
 
-This project is deployed on **Vercel**. Every push to `main` triggers an automatic deployment.
+This project is deployed on **Vercel**.
 
 🔗 **Live URL:** [https://forkify-2025.vercel.app/](https://forkify-2025.vercel.app/)
 
 ---
 
-## 📡 API Reference
+## 📁 Project Structure
 
-Powered by the **Forkify API v2**.
-
-| Endpoint | Description |
-|----------|-------------|
-| `GET /api/v2/recipes?search={query}` | Search recipes by keyword |
-| `GET /api/v2/recipes/{id}` | Get full recipe details |
-| `POST /api/v2/recipes` | Upload a custom recipe (requires API key) |
-
-Base URL: `https://forkify-api.herokuapp.com`
+```
+forkify-2025/
+├── src/
+│   ├── img/              # Static images & icons
+│   ├── js/
+│   │   ├── controller.js # MVC Controller
+│   │   ├── model.js      # Application state & API calls
+│   │   └── views/        # Individual View classes
+│   └── sass/             # Sass stylesheets
+├── index.html
+├── package.json
+└── .parcelrc
+```
 
 ---
 
 ## 📜 License & Credits
 
-Recipe data and original project concept by [Jonas Schmedtmann](https://twitter.com/jonasschmedtman).  
-> Use for learning or your portfolio. Do not use to teach. Do not claim as your own.
+Recipe data is provided by the [Forkify API](https://forkify-api.herokuapp.com/v2).  
+Original course project by [Jonas Schmedtmann](https://twitter.com/jonasschmedtman) — use for learning or your portfolio.
 
 ---
 
 <div align="center">
-Made with ❤️ by <a href="https://github.com/theubaidistan">theubaidistan</a>
+
+Made with ❤️ by [theubaidistan](https://github.com/theubaidistan)
+
 </div>
